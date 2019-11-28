@@ -66,4 +66,4 @@ O formato esperado em ambas URLs é uma _Response JSON_:
 
 ## Links úteis
 
-[https://dev.to/codenation/clean-architecture-using-golang-5791](Clean Architecture using Golang)
+[Clean Architecture using Golang](https://dev.to/codenation/clean-architecture-using-golang-5791)
