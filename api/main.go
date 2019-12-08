@@ -66,7 +66,13 @@ func getRandomQuote(service quote.Repository) http.Handler {
 		}
 
 		randomID := rand.Int() % len(allQuotes)
-		if err := json.NewEncoder(w).Encode(allQuotes[randomID].Detail); err != nil {
+		singleQuote := allQuotes[randomID]
+
+		response := make(map[string]string)
+		response["actor"] = singleQuote.Actor
+		response["quote"] = singleQuote.Detail
+
+		if err := json.NewEncoder(w).Encode(response); err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Error to return response"))
 		}

@@ -49,7 +49,7 @@ func scanQuotes(rows *sql.Rows, err error) ([]*entity.Quote, error) {
 		var actor string
 		err := rows.Scan(&detail, &actor)
 		if err != nil {
-			return nil, err
+			continue
 		}
 		var quote entity.Quote
 		quote.Detail = detail
