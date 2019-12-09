@@ -8,7 +8,7 @@ import (
 )
 
 type SqliteRepository struct {
-	db   *sql.DB
+	db *sql.DB
 }
 
 func NewSqliteRepository() *SqliteRepository {

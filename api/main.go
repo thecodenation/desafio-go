@@ -1,16 +1,16 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
-	"encoding/json"
-	"math/rand"
 
 	"github.com/codegangsta/negroni"
-	"github.com/eucleciojosias/codenation-challenge/pkg/quote"
 	"github.com/eucleciojosias/codenation-challenge/pkg/entity"
 	"github.com/eucleciojosias/codenation-challenge/pkg/middleware"
+	"github.com/eucleciojosias/codenation-challenge/pkg/quote"
 	"github.com/gorilla/context"
 	"github.com/gorilla/mux"
 )
@@ -38,9 +38,9 @@ func main() {
 
 	logger := log.New(os.Stderr, "logger: ", log.Lshortfile)
 	srv := &http.Server{
-		Addr:         ":8080",
-		Handler:      context.ClearHandler(http.DefaultServeMux),
-		ErrorLog:     logger,
+		Addr:     ":8080",
+		Handler:  context.ClearHandler(http.DefaultServeMux),
+		ErrorLog: logger,
 	}
 
 	log.Fatal(srv.ListenAndServe())
